@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Container, Content } from './styles';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const Register: React.FC = () => {
   return (
@@ -11,18 +13,18 @@ const Register: React.FC = () => {
           <h1>Create an account</h1>
 
           <span>Email</span>
-          <input/>
+          <Input name="email" autoComplete="off" />
 
           <span>Username</span>
-          <input/>
+          <Input name="username" autoComplete="off" />
 
           <span>Password</span>
-          <input type="password"/>
+          <Input name="password" type="password" />
 
           <span>Confirm Password</span>
-          <input type="password"/>
+          <Input name="password-confirm" type="password"/>
 
-          <button type="submit">Register</button>
+          <Button type="submit">Register</Button>
 
           <Link to="/login">Already have an account?</Link>
         </form>

@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 export default createGlobalStyle`
   :root {
     --secondary: #2f3136;
+    --tertiary: #292b2f;
   }
 
   * {

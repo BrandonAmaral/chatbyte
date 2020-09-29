@@ -12,35 +12,28 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  max-width: 500px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0px 0px 16px 0px #171717;
+  border-radius: 12px;
+
+  max-width: 550px;
 
   form {
     margin: 4em;
+    color: #e3e3e3;
 
     h1 {
       text-align: center;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      border-radius: 3px;
-      font-size: 1.2em;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      border-radius: 3px;
-      font-size: 1.2em;
-
-      margin-top: 1em;
-      margin-bottom: 0.2em;
+      margin-bottom: 1em;
     }
 
     a {
       text-decoration: none;
       font-size: 1.2em;
+      color: #772e87;
     }
 
     span {

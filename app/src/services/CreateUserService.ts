@@ -14,9 +14,9 @@ interface Request {
 
 class CreateUserService {
   public async execute({ username, display_name, email, password, profile_picture }: Request): Promise<User> {
-    const userRepository = getRepository(User);
+    const usersRepository = getRepository(User);
 
-    const checkUsername = await userRepository.findOne({
+    const checkUsername = await usersRepository.findOne({
       where: { username }
     });
 
@@ -24,7 +24,7 @@ class CreateUserService {
       throw new AppError('Username already taken');
     }
 
-    const checkEmail = await userRepository.findOne({
+    const checkEmail = await usersRepository.findOne({
       where: { email }
     });
 
@@ -32,25 +32,17 @@ class CreateUserService {
       throw new AppError('Email already taken');
     }
 
-    if (display_name == null) {
-      display_name = username;
-    }
-
-    if (profile_picture == null) {
-      profile_picture = 'default.png';
-    }
-
     const hashedPassword = await hash(password, 8);
 
-    const user = userRepository.create({
+    const user = usersRepository.create({
       username,
-      display_name,
+      display_name: username,
       email,
       password: hashedPassword,
-      profile_picture,
+      profile_picture: 'default.png',
     });
 
-    await userRepository.save(user);
+    await usersRepository.save(user);
 
     return user;
   }
