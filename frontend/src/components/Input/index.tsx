@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
+import { Field } from 'formik';
 
 import { Container } from './styles';
 
@@ -8,7 +9,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input: React.FC<InputProps> = (props) => (
   <Container>
-    <input {...props} />
+    <Field {...props} />
   </Container>
 );
 

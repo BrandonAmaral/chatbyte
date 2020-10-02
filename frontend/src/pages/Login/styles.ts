@@ -22,7 +22,7 @@ export const Content = styled.div`
   max-width: 550px;
 
   form {
-    margin: 4em;
+    margin: 4em 3em 3em 3em;
     color: #e3e3e3;
 
     h1 {
@@ -33,10 +33,22 @@ export const Content = styled.div`
     a {
       text-decoration: none;
       color: #772e87;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     span {
       font-size: 1.2em;
+    }
+
+    #email {
+      margin-bottom: 0.6em;
+    }
+
+    #password {
+      margin-bottom: 0.2em;
     }
   }
 `;

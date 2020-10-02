@@ -22,7 +22,7 @@ export const Content = styled.div`
   max-width: 550px;
 
   form {
-    margin: 4em;
+    margin: 4em 3em 3em 3em;
     color: #e3e3e3;
 
     h1 {
@@ -34,10 +34,14 @@ export const Content = styled.div`
       text-decoration: none;
       font-size: 1.2em;
       color: #772e87;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
-    span {
-      font-size: 1.2em;
+    .inputs {
+      margin-bottom: 0.6em;
     }
   }
 `;
